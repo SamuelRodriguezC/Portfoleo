@@ -121,3 +121,10 @@
     @apply bg-background font-primary text-white leading-loose;
   }
 }
+
+
+@layer utilities {
+  .text-aplication {
+    @apply text-blue-500;
+  }
+}
