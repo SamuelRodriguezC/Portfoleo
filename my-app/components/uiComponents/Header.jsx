@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import NavBar from './NavBar'
 import { Button } from '../ui/button'
+import NavbarMovile from './NavbarMovile'
 
 const Header = () => {
     return (
@@ -24,7 +25,9 @@ const Header = () => {
                 </div>
 
                 {/* Barra de Navegación para Móviles */}
-                <div className="lg:hidden">Mobile Nav</div>
+                <div className="lg:hidden">
+                    <NavbarMovile/>
+                </div>
 
             </div>
         </header>
