@@ -133,7 +133,7 @@
   .nav-item-hover {
     @apply  relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:w-full after:origin-bottom after:scale-x-0 after:bg-cyan-400 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom hover:after:scale-x-100 hover:text-cyan-400;
   }
-  .nav-button {
+  .btn {
     @apply relative inline-flex h-10 items-center justify-center overflow-hidden rounded-lg border-2 border-cyan-400 bg-transparent px-6 font-medium text-white transition-all duration-200 [box-shadow:5px_5px_rgb(34_211_238)] hover:translate-x-[3px] hover:translate-y-[3px] hover:[box-shadow:0px_0px_rgb(34_211_238)] cursor-pointer;
   }
 }

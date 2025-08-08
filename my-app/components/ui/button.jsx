@@ -10,7 +10,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "nav-button",
+          "btn",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
