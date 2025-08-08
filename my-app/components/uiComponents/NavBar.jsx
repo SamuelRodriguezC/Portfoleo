@@ -33,7 +33,7 @@ const navItems = [
 const NavBar = () => {
 
   // Obtener el url actual del navegador
-  const pathname = usePathname()
+  const pathName = usePathname()
 
   return (
     <nav className='flex gap-8'>
@@ -43,7 +43,7 @@ const NavBar = () => {
                 <Link 
                     key={index} 
                     href={item.path}
-                    className={`${item.path === pathname ? "text-main border-b-2 border-main" : "nav-item-hover"} capitalize`} >
+                    className={`${item.path === pathName ? "text-main border-b-2 border-main" : "nav-item-hover"} capitalize`} >
                   {item.name}
                 </Link>
             )}
