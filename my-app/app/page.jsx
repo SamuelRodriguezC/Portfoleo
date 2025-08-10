@@ -25,7 +25,7 @@ const Home = () => {
             <div className="flex flex-col xl:flex-row items-center gap-8">
 
               {/* descargar hoja de vida */}
-              <Button >
+              <Button>
                  <span>Descargar CV</span>
                  <BsDownload className="text-xl" />
               </Button>
