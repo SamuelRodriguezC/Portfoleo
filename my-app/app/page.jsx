@@ -12,7 +12,7 @@ const Home = () => {
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
 
           {/* Texto */}
-          <div className="text-center xl:text-left">
+          <div className="text-center xl:text-left order-2 xl:order-1">
             <span className="text-xl">Software Developer</span>
             <h1 className="h1 mb-6">
               Hola Yo Soy <br/>
@@ -38,7 +38,7 @@ const Home = () => {
           </div> 
 
           {/* Foto */}
-          <div className="">
+          <div className="order-1 xl:order-2 mb-8 xl:mb-0">
             <Photo/>
           </div>
         </div>
