@@ -1,11 +1,13 @@
 import { Button } from '@/components/ui/button';
 import React from 'react'
 import { BsDownload } from "react-icons/bs";
+import Social from './../components/uiComponents/Social';
+import Photo from './../components/uiComponents/Photo';
 
 
 const Home = () => {
   return (
-    <section className="w-full">
+    <section className="w-full padding-x">
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
 
@@ -20,15 +22,25 @@ const Home = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat expedita quia accusamus. Vitae iure itaque voluptatum ab atque ullam laudantium saepe assumenda, maxime facilis soluta, ad obcaecati labore ea quos.
             </p>
             {/* Btn y Redes Sociales */}
-            <div className="">
-              <Button variant="outline">
+            <div className="flex flex-col xl:flex-row items-center gap-8">
+
+              {/* descargar hoja de vida */}
+              <Button >
                  <span>Descargar CV</span>
                  <BsDownload className="text-xl" />
-
               </Button>
-            </div>
-          </div>
 
+              {/* Redes Social */}
+              <div className="mb-8 xl:mb-0">
+                <Social containerStyles="flex gap-4" iconStyles="w-9 h-9 border border-main rounded-full flex justify-center items-center text-main hover:bg-cyan-400 hover:text-black hover:shadow-lg hover:shadow-cyan-500  transtion-all duration-500"/> 
+              </div>
+            </div>
+          </div> 
+
+          {/* Foto */}
+          <div className="">
+            <Photo/>
+          </div>
         </div>
       </div>
     </section>

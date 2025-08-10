@@ -6,7 +6,7 @@ import NavbarMovile from './NavbarMovile'
 
 const Header = () => {
     return (
-        <header className='py-7 xl:py-5 text-white'>
+        <header className='py-7 xl:py-5 text-white padding-x'>
             <div className="container mx-auto flex justify-between items-center">
 
                 {/* Logo */}
