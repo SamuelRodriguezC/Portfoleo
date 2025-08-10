@@ -3,6 +3,7 @@ import React from 'react'
 import { BsDownload } from "react-icons/bs";
 import Social from './../components/uiComponents/Social';
 import Photo from './../components/uiComponents/Photo';
+import Stats  from './../components/uiComponents/Stats';
 
 
 const Home = () => {
@@ -43,6 +44,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Stats/>
     </section>
   )
 }
