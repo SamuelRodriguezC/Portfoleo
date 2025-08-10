@@ -11,7 +11,7 @@ const Photo = () => {
         initial={{ opacity: 0 }} // Estado inicial: invisible
         animate={{
             opacity: 1, // Estado final: visible
-            transition: { delay: 1, duration: 0.4, ease: "easeIn" } // Retraso de 2s, duración de 0.4s, curva suave
+            transition: { delay: 0.1, duration: 0.4, ease: "easeIn" } // Retraso de 2s, duración de 0.4s, curva suave
         }}
       >
         {/* Contenedor de la imagen (aparece un poco antes que el contenedor principal) */}
@@ -22,8 +22,8 @@ const Photo = () => {
             y: [5, -15, 5]        // Sube y baja
           }}
           transition={{
-            opacity: { delay: 1.4, duration: 0.4, ease: "easeIn" }, // Fade in
-            y: { delay: 1.8, duration: 5, ease: "easeInOut", repeat: Infinity } // Movimiento continuo
+            opacity: { delay: 0.1, duration: 0.4, ease: "easeIn" }, // Fade in
+            y: { delay: 0.1, duration: 5, ease: "easeInOut", repeat: Infinity } // Movimiento continuo
           }}
           className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute"
         >
