@@ -33,7 +33,7 @@ const Home = () => {
 
               {/* Redes Social */}
               <div className="mb-8 xl:mb-0">
-                <Social containerStyles="flex gap-4" iconStyles="w-9 h-9 border border-main rounded-full flex justify-center items-center text-main hover:bg-cyan-400 hover:text-black hover:shadow-lg hover:shadow-cyan-500  transtion-all duration-500"/> 
+                <Social containerStyles="flex gap-4" iconStyles="icon-styles"/> 
               </div>
             </div>
           </div> 

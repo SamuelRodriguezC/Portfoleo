@@ -25,25 +25,44 @@ function TabsList({
     <TabsPrimitive.List
       data-slot="tabs-list"
       className={cn(
-        "bg-muted text-muted-foreground inline-flex h-9 w-fit items-center justify-center rounded-lg p-[3px]",
+        "inline-flex h-auto rounded-md p-1 text-primary",
         className
       )}
       {...props} />
   );
 }
 
-function TabsTrigger({
-  className,
-  ...props
-}) {
+function TabsTrigger({ className, children, ...props }) {
   return (
     <TabsPrimitive.Trigger
       data-slot="tabs-trigger"
-      className={cn(
-        "data-[state=active]:bg-background dark:data-[state=active]:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring dark:data-[state=active]:border-input dark:data-[state=active]:bg-input/30 text-foreground dark:text-muted-foreground inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
-        className
-      )}
-      {...props} />
+      className={cn("group relative inline-flex items-center justify-center w-full rounded-lg p-0 border-none bg-transparent", className)}
+      {...props}
+    >
+<div
+  className="
+    relative z-10 inline-flex h-12 w-full items-center justify-center
+    overflow-hidden rounded-lg border-3 border-gray-800
+    px-6 font-medium text-white bg-gray-800
+    transition-all duration-300 cursor-pointer
+    group-hover:-translate-x-3 group-hover:-translate-y-3
+    hover:bg-gray-800 hover:text-white
+    group-data-[state=active]:border-cyan-400
+    group-data-[state=active]:font-bold
+    group-data-[state=active]:shadow-[0px_0px_10px_rgb(34_211_238)]
+  "
+>
+  {children}
+</div>
+
+      <div className="
+        absolute inset-0 z-0 h-full w-full rounded-lg
+        transition-all duration-300
+        group-hover:-translate-x-3 group-hover:-translate-y-3
+        group-hover:[box-shadow:5px_5px_#22d3ee,10px_10px_#67e8f9,15px_15px_#a5f3fc]
+      "></div>
+    </TabsPrimitive.Trigger>
+
   );
 }
 
@@ -54,7 +73,7 @@ function TabsContent({
   return (
     <TabsPrimitive.Content
       data-slot="tabs-content"
-      className={cn("flex-1 outline-none", className)}
+      className={cn("flex-1 outline-none min-h-[480px]", className)}
       {...props} />
   );
 }
