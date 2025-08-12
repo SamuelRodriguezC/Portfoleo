@@ -7,20 +7,20 @@ import Countup from "react-countup"
 
 const stats = [
   {
-    num: 12, 
-    text: "Años de experiencia",
+    num: 3, 
+    text: "Años en Programación",
   },
   {
-    num: 20, 
+    num: 4, 
     text: "Proyectos completados",
   },
   {
-    num: 8, 
-    text: "Tecnologías dominadas",
+    num: 12, 
+    text: "Tecnologías Exploradas",
   },
   {
-    num: 8, 
-    text: "Commits",
+    num: 390, 
+    text: "Commits en 2025",
   }
   
 ]
