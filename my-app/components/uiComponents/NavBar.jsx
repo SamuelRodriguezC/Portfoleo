@@ -21,7 +21,7 @@ const navItems = [
     path: '/resume',
   },
   {
-    name: 'Trabajo',
+    name: 'Proyectos',
     path: '/work',
   },
   {

@@ -10,26 +10,26 @@ import Link from 'next/link';
 
 // liks para la barra de navegación
 const navItems = [
-    {
-        name: 'Inicio',
-        path: '/',
-    },
-    {
-        name: 'Servicios',
-        path: '/services',
-    },
-    {
-        name: 'Currículum ',
-        path: '/resume',
-    },
-    {
-        name: 'Trabajo',
-        path: '/work',
-    },
-    {
-        name: 'Contacto',
-        path: '/contact',
-    },
+  {
+    name: 'Inicio',
+    path: '/',
+  },
+  {
+    name: 'Servicios',
+    path: '/services',
+  },
+  {
+    name: 'Currículum ',
+    path: '/resume',
+  },
+  {
+    name: 'Proyectos',
+    path: '/work',
+  },
+  {
+    name: 'Contacto',
+    path: '/contact',
+  },
 ]
 
 const NavbarMovile = () => {
