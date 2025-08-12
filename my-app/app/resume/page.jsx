@@ -4,7 +4,7 @@ import { SiTailwindcss, SiJavascript, SiTypescript, SiDjango, SiNextdotjs, SiHtm
 import React from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@radix-ui/react-tooltip"
-import { ScrollArea } from "@radix-ui/react-scroll-area"
+import { ScrollArea } from "@/components/ui/scroll-area"
 import { motion } from "framer-motion"
 
 const about = {
