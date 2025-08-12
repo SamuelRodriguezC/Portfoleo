@@ -25,10 +25,12 @@ const Home = () => {
             <div className="flex flex-col xl:flex-row items-center gap-8">
 
               {/* descargar hoja de vida */}
-              <Button>
-                  <span>Descargar CV</span>
-                  <BsDownload className="text-xl" />
-              </Button>
+                <a href="/cv/cv_samuel_rodriguez.pdf" download>
+                  <Button>
+                    <span>Descargar CV</span>
+                    <BsDownload className="text-xl" />
+                  </Button>
+                </a>
 
               {/* Redes Social */}
               <div className="mb-8 xl:mb-0">
