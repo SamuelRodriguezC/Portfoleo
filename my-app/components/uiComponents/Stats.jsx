@@ -19,8 +19,8 @@ const stats = [
     text: "Tecnologías Exploradas",
   },
   {
-    num: 390, 
-    text: "Commits en 2025",
+    num: 392, 
+    text: "Contribuciones en 2025",
   }
   
 ]
