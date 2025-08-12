@@ -5,7 +5,7 @@ import React from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@radix-ui/react-tooltip"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { motion } from "framer-motion"
+import { inertia, motion } from "framer-motion"
 
 const about = {
   title: "Sobre mí",
@@ -16,12 +16,12 @@ const about = {
       fieldValue: "Samuel Rodríguez",
     },
     {
-      fieldName: "Teléfono",
-      fieldValue: "(+57) 3106189535",
-    },
-    {
       fieldName: "Correo",
       fieldValue: "samuelrc250@gmail.com"
+    },
+    {
+      fieldName: "Teléfono",
+      fieldValue: "(+57) 3106189535",
     },
     {
       fieldName: "Nacionalidad",
@@ -184,8 +184,19 @@ const Resume = () => {
               </div>
             </TabsContent>
             {/* ----------------- Sobre mí ----------------- */}
-            <TabsContent value="about" className="w-full">
-              about
+            <TabsContent value="about" className="w-full text-center xl:text-left">
+              <div className="flex flex-col gap-[30px] ">
+                <h3 className="text-4xl font-bold ">{about.title}</h3>
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{about.description}</p>
+                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
+                  {about.info.map((item, index) => (
+                    <li key={index} className="flex items-center justify-center xl:justify-start gap-4 ">
+                      <span className="text-white/60">{item.fieldName}</span>
+                      <span className="text-xl">{item.fieldValue}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </TabsContent>
             {/*----------------- Educación -----------------*/}
             <TabsContent value="education" className="w-full">
