@@ -192,7 +192,7 @@ const Work = () => {
             <div className="absolute w-full h-[2px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent"></div>
 
             {/* Icono decorativo */}
-            <div className="relative z-10 bg-[#0a0a0a] px-4">
+            <div className="relative z-10 bg-[#18191c] px-4">
               <VscRobot  className="text-cyan-400 text-2xl" />
             </div>
           </motion.div>
