@@ -1,180 +1,187 @@
 "use client"
 import { motion } from "framer-motion"
-import React, {useState} from 'react'
+import React, { useState, useEffect } from 'react'
 import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css"
 import { BsArrowUpRight, BsGithub } from "react-icons/bs"
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger  } from "@/components/ui/tooltip"
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import Link from "next/link"
 import Image from "next/image"
 import WorkSliderBtns from "@/components/uiComponents/WorkSliderBtns"
-import { Item } from "@radix-ui/react-select"
+import ColorThief from "colorthief"
+
 
 const projects = [
   {
     num: '01',
     category: 'Full Stack',
     title: 'MVOGMS',
-    description: "asdasd asidpaij paisj paijdpiajsp iallañjnlasdjn aslk clñsjnclañsjndm añljn lñnlañsj cad casda asdas adasddad",
+    description: "MVOGMS es un sistema integral de gestión para supermercados, diseñado para optimizar el control de productos, órdenes, proveedores y clientes en un solo lugar. El sistema permite registrar y actualizar inventarios en tiempo real, gestionar compras y ventas, y mantener un historial organizado de proveedores y clientes. Con su interfaz intuitiva y funciones centralizadas, MVGOMS mejora la eficiencia operativa y reduce errores en el manejo de stock.",
     stack: [
-      {name: "HTMl 5"},
-      {name: "Php"},
-      {name: "Css"},
-      {name: "JavaScript"},
-      {name: "MySQL"},
+      { name: "HTML 5" },
+      { name: "Php" },
+      { name: "Css" },
+      { name: "JavaScript" },
+      { name: "MySQL" },
     ],
-    image: '/assets/work/mvogms/photo.png',
-    live: '',
-    github: '',
+    images: [
+      { photo: '/assets/work/mvogms/photo.png' },
+      { photo: '/assets/work/mvogms/photo2.png' },
+      { photo: '/assets/work/mvogms/photo3.png' },
+      { photo: '/assets/work/mvogms/photo4.png' },
+    ],
+    github: 'https://github.com/SamuelRodriguezC/mvogms',
   },
   {
     num: '02',
     category: 'Full Stack',
-    title: 'Proyecto Scissors',
-    description: "asdasd asidpaij paisj paijdpiajsp iallañjnlasdjn aslk clñsjnclañsjndm añljn lñnlañsj cad casda asdas adasddad",
+    title: 'Scissors',
+    description: "En Garzón Peluquería, la gestión manual de citas y productos generaba desorganización, cruces de horarios, falta de seguimiento a clientes y un control deficiente del inventario, afectando la eficiencia y la experiencia del usuario. Proyecto Scissors surge como una solución integral que centraliza la programación de citas, asignación de estilistas, gestión del catálogo, historial de citas e inventario junto con la generación de reportes, optimizando tiempos, mejorando el servicio al cliente y asegurando un control preciso de los recursos del negocio.",
     stack: [
-      {name: "HTMl 5"},
-      {name: "Css"},
-      {name: "Java"},
-      {name: "Spring Boot"},
-      {name: "Bootstrap"},
-      {name: "MySQL"},
+      { name: "HTML 5" },
+      { name: "Css" },
+      { name: "Java" },
+      { name: "Spring Boot" },
+      { name: "Bootstrap" },
+      { name: "MySQL" },
     ],
-    image: '/assets/work/scissors/pscissors.png',
-    live: '',
+    images: [
+      { photo: '/assets/work/scissors/pscissors.png' },
+      { photo: '/assets/work/scissors/pscissors2.png' },
+      { photo: '/assets/work/scissors/pscissors3.png' },
+      { photo: '/assets/work/scissors/pscissors4.png' },
+    ],
     github: '',
   },
   {
     num: '03',
     category: 'Full Stack',
     title: 'Comité',
-    description: "asdasd asidpaij paisj paijdpiajsp iallañjnlasdjn aslk clñsjnclañsjndm añljn lñnlañsj cad casda asdas adasddad",
+    description: "En la Universidad Libre, la gestión de opciones de grado era lenta y desorganizada eso generaba falta de seguimiento centralizado. Comité resuelve este problema integrando en una sola plataforma el registro de transacciones, asignación de roles, control de procesos y etapas con fechas límite, validación de entregables y emisión de certificados, mejorando la coordinación, trazabilidad y eficiencia del proceso académico.",
     stack: [
-      {name: "Php"},
-      {name: "Laravel"},
-      {name: "Filament"},
-      {name: "TailwindCss"},
-      {name: "BluePrint"},
-      {name: "MySQL"},
+      { name: "Php" },
+      { name: "Laravel" },
+      { name: "Filament" },
+      { name: "TailwindCss" },
+      { name: "BluePrint" },
+      { name: "MySQL" },
     ],
-    image: '/assets/work/comite/comite.png',
-    live: '',
-    github: '',
+    images: [
+      { photo: '/assets/work/comite/comite.png' },
+      { photo: '/assets/work/comite/comite2.png' },
+      { photo: '/assets/work/comite/comite3.png' },
+      { photo: '/assets/work/comite/comite4.png' },
+    ],
+    github: 'https://github.com/SamuelRodriguezC/comite',
   },
   {
     num: '04',
     category: 'Full Stack',
     title: 'ShopLine',
-    description: "asdasd asidpaij paisj paijdpiajsp iallañjnlasdjn aslk clñsjnclañsjndm añljn lñnlañsj cad casda asdas adasddad",
+    description: "Shopline es una plataforma diseñada para dar visibilidad a pequeñas empresas en el entorno digital, facilitando la venta online. Permite mostrar productos de forma atractiva, realizar reseñas, gestionar ordenes, buscar y agregar productos al carrito además del pago online por medio de stripe, ayudando a los negocios a ampliar su alcance, mejorar su presencia online y aumentar sus oportunidades de venta.",
     stack: [
-      {name: "Python"},
-      {name: "Django"},
-      {name: "TypeScript"},
-      {name: "Next.js"},
-      {name: "TailwindCss"},
-      {name: "MySQL"},
+      { name: "Python" },
+      { name: "Django" },
+      { name: "TypeScript" },
+      { name: "Next.js" },
+      { name: "TailwindCss" },
+      { name: "MySQL" },
     ],
-    image: '/assets/work/shopline/shopline.png',
-    live: '',
-    github: '',
+    images: [
+      { photo: '/assets/work/shopline/shopline.png' },
+      { photo: '/assets/work/shopline/shopline2.png' },
+      { photo: '/assets/work/shopline/shopline3.png' },
+      { photo: '/assets/work/shopline/shopline4.png' },
+    ],
+    github: 'https://github.com/SamuelRodriguezC/shopline',
   },
 ]
 
 const Work = () => {
-
-  const [project, SetProject ] = useState(projects[0])
-
-  const handleSlideChange = (swiper) => {
-    // get current slide index
-    const currentIndex = swiper.activeIndex
-    // Update project state based on current slide index
-    SetProject(projects[currentIndex])
-  }
-
+  
   return (
-    <motion.section 
-      initial={{opacity: 0}}
-      animate={{opacity: 1, transition: {delay: 0.4, duration: 0.4, ease: "easeIn"}}}
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { delay: 0.4, duration: 0.4, ease: "easeIn" } }}
       className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
     >
-      <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row xl:gap-[30px] ">
+      {projects.map((project, index) => (
+        <div key={index} className="container mx-auto mb-16">
+          <div className={`flex flex-col xl:flex-row xl:gap-[30px] ${index % 2 !== 0 ? 'xl:flex-row-reverse ' : ''}`}>
 
-          <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
-            <div className="flex flex-col gap-[30px] h-[50%]">
+            {/* Texto del proyecto */}
+            <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
+              <div className="flex flex-col gap-[30px] h-[50%]">
 
-              {/* Project Num  */}
-              <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
-                {project.num}
+                <div className="text-6xl leading-none font-extrabold text-transparent text-outline">
+                  {project.num}
                 </div>
-              {/* Project Category */}
-              <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-main transition-all duration-500 capitalize">Proyecto {project.category}</h2>
 
-              {/* Project Description */}
-              <p className="text-white/60">{project.description}</p>
-              {/* Stack  */}
-              <ul className="flex gap-4">
-                {project.stack.map((item, index) => (
-                  <li key={index} className="text-xl text-main">{item.name}{index !== project.stack.length - 1 && ","}</li>
-                ))}
-              </ul>
-              {/* Separator */}
-              <div className="border border-white/20"></div>
-              {/* Botones */}
-              <div className="flex items-center gap-4">
-                {/* Live Project */}
-                <Link href={project.live}>
-                <TooltipProvider delayDuration={100}>
-                  <Tooltip>
-                    <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                      <BsArrowUpRight className="text-white text-3xl group-hover:text-main"/>
-                    </TooltipTrigger>
-                    <TooltipContent  className="bg-white text-black px-5 rounded-sm">
-                      <p>Live Project</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-                </Link>
-                {/* Git Hub Button  */}
-                <Link href={project.github}>
-                <TooltipProvider delayDuration={100}>
-                  <Tooltip>
-                    <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                      <BsGithub className="text-white text-3xl group-hover:text-cyan-400"/>
-                    </TooltipTrigger>
-                    <TooltipContent  className="bg-white text-black px-5 rounded-sm">
-                      <p>Repositorio Git Hub</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-                </Link>
+                <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-main transition-all duration-500 capitalize">
+                  {project.title} - {project.category}
+                </h2>
+
+                <p className="text-white/60">{project.description}</p>
+
+                <ul className="flex gap-4 flex-wrap">
+                  {project.stack.map((item, i) => (
+                    <li key={i} className="text-xl text-main">
+                      {item.name}{i !== project.stack.length - 1 && ","}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="border border-white/20"></div>
+
+                <div className="flex items-center gap-4">
+                  {/* GitHub */}
+                  <Link href={project.github} target="_blank" rel="noopener noreferrer">
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group hover:shadow-[0px_0px_10px_rgb(34_211_238)] transition-all duration-300">
+                          <BsGithub className="text-white text-3xl group-hover:text-cyan-400 cursor-pointer "/>
+                        </TooltipTrigger>
+                        <TooltipContent className="bg-white text-black px-5 rounded-sm">
+                          <p>Repositorio Git Hub</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="w-full xl:w-[50%]">
-            <Swiper spaceBetween={30} slidesPerView={1} className="xl:h-[520px] mb-12" onSlideChange={handleSlideChange}>
-              {projects.map((project, index) => (
-                <SwiperSlide key={index} className="w-full">
-                  <div className="h-[460px] relative group flex justify-center items-center bg-gray-50/20">
-                    {/* Overlay */}
-                    <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
-                    {/* Image */}
-                    <div className="relative w-full h-full">
-                      <Image src={project.image} fill className="object-cover" alt=""></Image>
+            {/* Slider de imágenes */}
+            <div className="w-full xl:w-[50%]">
+              <Swiper
+                loop={true} 
+                spaceBetween={30}
+                slidesPerView={1}
+                
+                className="xl:h-[520px] mb-12 cursor-pointer rounded-xl"
+              >
+                {project.images.map((image, i) => (
+                  <SwiperSlide key={i} className="w-full">
+                    <div className="h-[460px] relative group flex justify-center items-center bg-gray-50/20">
+                      <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
+                      <div className="relative w-full h-full">
+                        <Image src={image.photo} fill className="object-cover" alt="" />
+                      </div>
                     </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-              {/* slider buttons */}
-              <WorkSliderBtns 
-                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
-                btnStyles="bg-main hover:bg-cyan-400 text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transtition-all duration-400"
-              />
-            </Swiper>
+                  </SwiperSlide>
+                ))}
+
+                <WorkSliderBtns
+                  containerStyles={`flex gap-2 absolute bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none ${
+                    index % 2 === 0 ? 'right-0' : 'left-0'
+                  }`}
+                  btnStyles="bg-main hover:bg-cyan-400 text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transtition-all duration-400 cursor-pointer"
+                />
+              </Swiper>
+            </div>
           </div>
         </div>
-      </div>
+      ))}
     </motion.section>
   )
 }
