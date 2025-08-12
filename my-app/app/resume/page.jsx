@@ -1,6 +1,6 @@
 "use client"
-import { Faphp, FaPython, FaReact, FaLaravel } from "react-icons/fa"
-import { SiTailwindcss, SiJavascript, SiTypescript, SiDjango, SiNextdotjs, SiHtml5, SiCss3} from "react-icons/si"
+import { FaPhp, FaPython, FaReact, FaLaravel } from "react-icons/fa"
+import { SiTailwindcss, SiJavascript, SiTypescript, SiDjango, SiNextdotjs, SiHtml5, SiCss3, SiBlueprint, SiFilament, SiGithub} from "react-icons/si"
 import React from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@radix-ui/react-tooltip"
@@ -78,20 +78,20 @@ const skills = {
   description: "aadoaslan ljasndlansdl na ljaldjal nasljd nalsn dlajd asljnas aldj lj asjf na", 
   skillList: [
     {
-      icon: <Faphp/>,
+      icon: <FaPhp/>,
       name: "Php",
-    },
-    {
-      icon: <FaPython/>,
-      name: "python",
-    },
-    {
-      icon: <FaReact/>,
-      name: "React",
     },
     {
       icon: <FaLaravel/>,
       name: "Laravel",
+    },
+    {
+      icon: <SiBlueprint/>,
+      name: "BluePrint",
+    },
+    {
+      icon: <SiFilament/>,
+      name: "Filament",
     },
     {
       icon: <SiTailwindcss />,
@@ -106,6 +106,14 @@ const skills = {
       name: "TypeScript",
     },
     {
+      icon: <FaReact/>,
+      name: "React",
+    },
+    {
+      icon: <FaPython/>,
+      name: "python",
+    },
+    {
       icon: <SiDjango/>,
       name: "Django - Django Rest",
     },
@@ -113,13 +121,17 @@ const skills = {
       icon: <SiNextdotjs/>,
       name: "Next.js",
     },
+    // {
+    //   icon: <SiHtml5/>,
+    //   name: "HTML5",
+    // },
+    // {
+    //   icon: <SiCss3/>,
+    //   name: "Css",
+    // },
     {
-      icon: <SiHtml5/>,
-      name: "HTML5",
-    },
-    {
-      icon: <SiCss3/>,
-      name: "Css",
+      icon: <SiGithub/>,
+      name: "Git Hub",
     },
   ]
 }
@@ -145,8 +157,31 @@ const Resume = () => {
           </TabsList>
           <div className="min-h-[70vh] w-full">
             {/* ----------------- Habilidades ----------------- */}
-            <TabsContent value="skills" className="w-full">
-              skills
+            <TabsContent value="skills" className="w-full h-full">
+              <div className="flex flex-col gap-[30px]">
+                <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                  <h3 className="text-4xl font-bold">{skills.title}</h3>
+                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{skills.description}</p>
+                </div>
+                {/* Lista de Habilidades */}
+                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px] gap-5">
+                  {skills.skillList.map((skill, index) => (
+                    // Cada Item
+                    <li key={index} className="">
+                      <TooltipProvider delayDuration={100}>
+                        <Tooltip>
+                          <TooltipTrigger className="w-full h-[150px] bg-gray-800 rounded-xl flex justify-center items-center group cursor-pointer">
+                            <div className="text-6xl group-hover:text-cyan-400 transition-all duration-300">{skill.icon}</div>
+                          </TooltipTrigger>
+                          <TooltipContent className="bg-white text-black px-5 rounded-sm">
+                            <p className="capitalize">{skill.name}</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </TabsContent>
             {/* ----------------- Sobre mí ----------------- */}
             <TabsContent value="about" className="w-full">
