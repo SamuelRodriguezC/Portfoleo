@@ -61,13 +61,13 @@ const education = {
   description: "asdpjkpaj pasjdpiaj paij askdpiajd piajsp daij ijapijdaijpaji piajdp iaj ad ",
   items: [
     {
-      institution: "Servicion Nacional de Aprendizaje - SENA",
+      institution: "Servicio Nacional de Aprendizaje",
       degree: "Técnico en Programación de Software",
       duration: "Enero 2022 - Diciembre 2023"
     },
     {
-      institution: "Servicion Nacional de Aprendizaje - SENA",
-      degree: "tecnólogo en Análisis y Desarrollo de Software",
+      institution: "Servicio Nacional de Aprendizaje",
+      degree: "Tecnólogo en Análisis y Desarrollo de Software",
       duration: "Enero 2024 - Septiembre 2024"
     }
   ]
@@ -154,7 +154,24 @@ const Resume = () => {
             </TabsContent>
             {/*----------------- Educación -----------------*/}
             <TabsContent value="education" className="w-full">
-              education
+              <div className="flex flex-col gap-[30px] text-center lg:text-left">
+                <h3 className="text-4xl font-bold">{education.title}</h3>
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{education.description}</p>
+                <ScrollArea className="h-[400px]">
+                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                    {education.items.map((item, index) => (
+                      <li key={index} className="bg-gray-800 h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-center gap-1 ">
+                        <span className="text-main">{item.duration}</span>
+                        <h3 className="text-xl max-w-[260px] min-h-[60px] text-center">{item.degree}</h3>
+                        <div className="flex items-center gap-3 mt-8">
+                          <span className="w-[6px] h-[6px] rounded-full bg-main"></span>
+                          <p className="text-white/60 text-sm ">{item.institution}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </ScrollArea>
+              </div>
             </TabsContent>
             {/*----------------- Experiencia -----------------*/}
             <TabsContent value="experience" className="w-full">
