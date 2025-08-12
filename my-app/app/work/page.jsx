@@ -7,6 +7,7 @@ import { BsArrowUpRight, BsGithub } from "react-icons/bs"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import Link from "next/link"
 import Image from "next/image"
+import { VscRobot } from "react-icons/vsc";
 import WorkSliderBtns from "@/components/uiComponents/WorkSliderBtns"
 import ColorThief from "colorthief"
 
@@ -78,7 +79,7 @@ const projects = [
     num: '04',
     category: 'Full Stack',
     title: 'ShopLine',
-    description: "Shopline es una plataforma diseñada para dar visibilidad a pequeñas empresas en el entorno digital, facilitando la venta online. Permite mostrar productos de forma atractiva, realizar reseñas, gestionar ordenes, buscar y agregar productos al carrito además del pago online por medio de stripe, ayudando a los negocios a ampliar su alcance, mejorar su presencia online y aumentar sus oportunidades de venta.",
+    description: "Shopline es una plataforma pensada para dar visibilidad a pequeñas empresas en el entorno digital, facilitando la venta online. Permite mostrar productos de forma atractiva, realizar reseñas, gestionar ordenes, buscar y agregar productos al carrito además del pago online por medio de stripe, ayudando a los negocios a ampliar su alcance, mejorar su presencia online y aumentar sus oportunidades de venta.",
     stack: [
       { name: "Python" },
       { name: "Django" },
@@ -180,9 +181,26 @@ const Work = () => {
               </Swiper>
             </div>
           </div>
+          {/* Separador */}
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={{ opacity: 1, scaleX: 1 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            className="relative w-full flex items-center justify-center my-16"
+          >
+            {/* Línea con gradiente */}
+            <div className="absolute w-full h-[2px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent"></div>
+
+            {/* Icono decorativo */}
+            <div className="relative z-10 bg-[#0a0a0a] px-4">
+              <VscRobot  className="text-cyan-400 text-2xl" />
+            </div>
+          </motion.div>
         </div>
+        
       ))}
     </motion.section>
+    
   )
 }
 
