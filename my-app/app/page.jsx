@@ -4,6 +4,7 @@ import { BsDownload } from "react-icons/bs";
 import Social from './../components/uiComponents/Social';
 import Photo from './../components/uiComponents/Photo';
 import Stats  from './../components/uiComponents/Stats';
+import Link from "next/link"
 
 
 const Home = () => {
@@ -25,12 +26,11 @@ const Home = () => {
             <div className="flex flex-col xl:flex-row items-center gap-8">
 
               {/* descargar hoja de vida */}
-                <a href="/cv/cv_samuel_rodriguez.pdf" download>
+                <Link href="/resume">
                   <Button>
-                    <span>Descargar CV</span>
-                    <BsDownload className="text-xl" />
+                    <span>Más Sobre Mí</span>
                   </Button>
-                </a>
+                </Link>
 
               {/* Redes Social */}
               <div className="mb-8 xl:mb-0">

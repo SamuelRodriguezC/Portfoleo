@@ -3,6 +3,8 @@ import React from 'react'
 import NavBar from './NavBar'
 import { Button } from '../ui/button'
 import NavbarMovile from './NavbarMovile'
+import { BsDownload } from "react-icons/bs";
+
 
 const Header = () => {
     return (
@@ -19,9 +21,12 @@ const Header = () => {
                 {/* Barra de Navegación para Escritorio */}
                 <div className="hidden lg:flex items-center gap-8">
                     <NavBar/>
-                    <Link href="/contact">
-                        <Button>Contáctame</Button>
-                    </Link>
+                <a href="/cv/cv_samuel_rodriguez.pdf" target="_blank" rel="noopener noreferrer">
+                <Button>
+                    <span>Ver CV</span>
+                    <BsDownload className="text-xl" />
+                </Button>
+                </a>
                 </div>
 
                 {/* Barra de Navegación para Móviles */}

@@ -37,7 +37,7 @@ const NavBar = () => {
 
   return (
     <nav className='flex gap-8'>
-      {/* Recorrer cada uno de los item de las lista */}
+      {/* Recorrer cada uno de los items de la lista */}
       {navItems.map((item, index) => 
         {return (
                 <Link 
