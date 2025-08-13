@@ -1,0 +1,38 @@
+// ESLint es una herramienta que analiza código JavaScript o TypeScript 
+// para detectar errores, malas prácticas y problemas de estilo antes de que
+//  la aplicación se ejecute. Permite mantener un código consistente, limpio y 
+// libre de errores, marcando advertencias sobre variables sin usar, errores de 
+// sintaxis o incumplimiento de reglas definidas, y puede incluso corregir automáticamente 
+// algunos problemas. Se integra con editores como VS Code, ayudando a los 
+// desarrolladores a escribir código más seguro y organizado, especialmente en proyectos como Next.js.
+
+
+
+// sirve para que ESLint cargue un conjunto de reglas recomendadas por Next.js, enfocadas en buenas prácticas y rendimiento web.
+{
+    "extends" : "next/core-web-vitals",
+    "rules": {
+        // Desactiva la regla que normalmente evita caracteres especiales sin escapar
+        // en JSX, como comillas, >, <, etc. Esto permite escribir textos directamente.
+        "react/no-unescaped-entities": "off",
+
+        // Desactiva la regla de TypeScript ESLint que fuerza el uso de comillas simples o dobles
+        // según la configuración. No habrá advertencias sobre comillas.
+        "@typescript-eslint/quotes": "off",
+
+          // Otra forma de desactivar la regla de comillas en JavaScript (no TypeScript). 
+        // [0] o "off" significa que ESLint no marcará ningún error sobre el tipo de comillas.
+        "quotes": [0],
+
+        // Esta regla normalmente fuerza a usar comillas diferentes en strings en lugar de escapar
+        // caracteres. Con 0 se desactiva, así que se puede escapar sin advertencia.
+        "avoidEscape": 0,
+
+        // Desactiva la recomendación de usar template literals (`) en vez de comillas simples/dobles.
+        "allowTemplateLiterals": 0,
+
+        // Desactiva la regla que advierte sobre escapes innecesarios en strings o regex.
+        // Esto permite usar \ sin que ESLint lo marque como redundante.
+        "no-useless-escape": 0
+    }
+}
