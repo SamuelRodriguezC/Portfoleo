@@ -9,7 +9,7 @@ import { inertia, motion } from "framer-motion"
 
 const about = {
   title: "Sobre mí",
-  description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos est nemo facere impedit, autem nostrum, similique repudiandae, incidunt ad ipsa officia eaque iste alias harum voluptates quasi voluptatibus molestiae ex.",
+  description: "Estudiante en el área de análisis y desarrollo de software, con conocimientos en front-end, back-end y gestión de bases de datos. Con profundo interés por el aprendizaje continuo y compromiso con la creación de soluciones prácticas y funcionales.",
   info: [
     {
       fieldName: "Nombre",
@@ -24,9 +24,21 @@ const about = {
       fieldValue: "(+57) 3106189535",
     },
     {
-      fieldName: "Nacionalidad",
-      fieldValue: "Colombiano"
+      fieldName: "Ubicación",
+      fieldValue: "Bogotá, Colombia"
     },
+    {
+      fieldName: "Idiomas",
+      fieldValue: "Español (nativo), Inglés (intermedio)"
+    },
+    {
+      fieldName: "Perfil GitHub",
+      fieldValue: "SamuelRodriguezC"
+    },
+    {
+      fieldName: "Disponibilidad",
+      fieldValue: "Remoto o presencial"
+    }
 
   ],
 
@@ -35,20 +47,10 @@ const about = {
 const expericence ={
   icon: '/assets/resume/badge.svg',
   title: "Mi Experiencia",
-  description: "asdfas asd asd asdnasdnlasjn lasndl jnaslj nalsdj naslj nalsj nas",
+  description: "Desarrollo de proyectos en entornos colaborativos, aplicando metodologías ágiles y herramientas de control de versiones. Enfoque en la resolución de problemas, adaptación a diferentes retos y mejora continua del código mediante retroalimentación y pruebas constantes.",
   items: [  
   {
-    company: "Tech Solutions",
-    postition: "Full Stack Developer", 
-    duration: "Marzo 2025 - Septiembre 2025"
-  },
-  {
-    company: "Tech Solutions",
-    postition: "Full Stack Developer", 
-    duration: "Marzo 2025 - Septiembre 2025"
-  },
-  {
-    company: "Tech Solutions",
+    company: "Universidad Libre",
     postition: "Full Stack Developer", 
     duration: "Marzo 2025 - Septiembre 2025"
   },
@@ -58,7 +60,7 @@ const expericence ={
 const education = {
   icon: "/assets/resume/cap.svg",
   title: "Educación", 
-  description: "asdpjkpaj pasjdpiaj paij askdpiajd piajsp daij ijapijdaijpaji piajdp iaj ad ",
+  description: "Formación técnica y tecnológica que abarca todas las fases del desarrollo de software, incluyendo análisis de requerimientos, diseño, programación, pruebas, implementación y mantenimiento. Enfoque en la aplicación de buenas prácticas y uso de herramientas modernas para el desarrollo web y de aplicaciones.",
   items: [
     {
       institution: "Servicio Nacional de Aprendizaje",
@@ -75,7 +77,7 @@ const education = {
 
 const skills = {
   title: "Mis Habilidades",
-  description: "aadoaslan ljasndlansdl na ljaldjal nasljd nalsn dlajd asljnas aldj lj asjf na", 
+  description: "Manejo de herramientas y lenguajes que permiten desarrollar aplicaciones web completas, desde el diseño de interfaces atractivas hasta la programación del lado del servidor. Experiencia en el uso de frameworks y librerías modernas que facilitan la creación de proyectos funcionales, optimizados y adaptados a diferentes necesidades.", 
   skillList: [
     {
       icon: <FaPhp/>,
@@ -188,7 +190,7 @@ const Resume = () => {
               <div className="flex flex-col gap-[30px] ">
                 <h3 className="text-4xl font-bold ">{about.title}</h3>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{about.description}</p>
-                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
+                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[900px] mx-auto xl:mx-0">
                   {about.info.map((item, index) => (
                     <li key={index} className="flex items-center justify-center xl:justify-start gap-4 ">
                       <span className="text-white/60">{item.fieldName}</span>

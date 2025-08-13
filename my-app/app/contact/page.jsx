@@ -1,95 +1,98 @@
 "use client"
 
-import React from 'react'
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue} from "@/components/ui/select"
-import { FaPhoneAlt, FaEnvelope, FaMapMarkedAlt } from "react-icons/fa"
-import { motion } from "framer-motion"
+import React from "react";
+import { motion } from "framer-motion";
+import { FaWhatsapp, FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
+import { CheckCircle } from "lucide-react";
 
-const info = [
-  {
-    icon: <FaPhoneAlt/>,
-    title: 'Teléfono',
-    description: '(+57) 3106189535',
-  },
-  {
-    icon: <FaEnvelope/>,
-    title: 'Dirección de Correo',
-    description: 'samuelrc250@gmail.com',
-  },
-  {
-    icon: <FaMapMarkedAlt/>,
-    title: 'Ubicación',
-    description: 'Bogotá, Colombia',
-  },
-]
+const quickContacts = [
+  { icon: <FaWhatsapp />, label: "WhatsApp" , href: "https://wa.me/573106189535" },
+  { icon: <FaEnvelope />, label: "Correo", href: "mailto:samuelrc250@gmail.com" },
+  { icon: <FaLinkedin />, label: "LinkedIn", href: "https://linkedin.com/in/samuelrc250" },
+  { icon: <FaGithub />, label: "GitHub", href: "https://github.com/SamuelRodriguezC" },
+];
+
+const reasons = [
+  "Entrega puntual y compromiso",
+  "Comunicación clara y constante",
+  "Trabajo en equipo y colaboración",
+  "Adaptabilidad y solución de problemas",
+  "Empatía y escucha activa",
+  "Pensamiento crítico y analítico",
+  "Creatividad para proponer soluciones",
+  "Manejo constructivo de críticas",
+  "Liderazgo colaborativo",
+  "Proactividad e iniciativa",
+  "Resiliencia frente a desafíos",
+  "Aprendizaje y mejora continua",
+  "Atención al detalle y calidad",
+  "Gestión eficiente del tiempo y prioridades",
+];
+
+const CarouselRow = ({ items, reverse }) => {
+  return (
+    <motion.div
+      className="flex gap-6"
+      animate={{ x: reverse ? ["0%", "-50%"] : ["-50%", "0%"] }}
+      transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
+    >
+      {[...items, ...items].map((reason, i) => (
+        <div
+          key={i}
+          className="min-w-[250px] bg-gray-800 p-6 rounded-xl text-center shadow-lg"
+        >
+          <CheckCircle className="text-main w-8 h-8 mx-auto mb-4" />
+          <p className="text-white font-medium">{reason}</p>
+        </div>
+      ))}
+    </motion.div>
+  );
+};
 
 const Contact = () => {
   return (
-    <motion.section
-      initial={{opacity: 0}}
-      animate={{opacity: 1, transition: {delay: 0.4, duration: 0.4, ease: "easeIn"}}}
-      className="py-6"
-    >
-      <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row  ">
-          {/* Formulario */}
-          <div className="xl:w-[64%] order-2 xl:order-none">
-            <form className="flex flex-col gap-6 p-10 bg-gray-800 rounded-xl" action="">
-              <h3 className="text-4xl text-main font-bold">Trabajemos Juntos</h3>
-              <p className="text-white/60 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate aliquid pariatur dolorum nemo? Iusto quo iste cumque quas omnis eum cupiditate? Et, magnam magni! Aliquam nemo consequatur enim voluptates a.</p>
-              {/* Input */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="firstname" placeholder="Primer Nombre" />
-                <Input type="lastname" placeholder="Segundo Nombre" />
-                <Input type="email" placeholder="Dirección de Correo" />
-                <Input type="phone" placeholder="Número Teléfono" />
-              </div>
-              {/* Select */}
-              <Select>
-                <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Selecciona un Servicio"/>
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel>Selecciona un Servicio</SelectLabel>
-                    <SelectItem value="front">Front End</SelectItem>
-                    <SelectItem value="back">Back End </SelectItem>
-                    <SelectItem value="full">Full Stack </SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
-              {/* textArea */}
-              <Textarea 
-                className="h-[200px]"
-                placeholder="Puede escribir un mensaje aqui."
-              />
-              {/* Form Button */}
-              <Button size="md" className="max-w-40">Enviar Mensaje</Button>
-            </form>
-          </div>
-          {/* Información */}
-          <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
-            <ul className="flex flex-col gap-10">
-              {info.map((item, index) => (
-                <li key={index} className="flex items-center gap-6 ">
-                  <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-gray-800 text-main rounded-md flex items-center justify-center">
-                    <div className="text-[28px]">{item.icon}</div>
-                    </div>
-                  <div className="flex-1">
-                    <p className="text-white/60">{item.title}</p>
-                    <h3 className="text-xl">{item.description}</h3>
-                  </div>
-                </li>
-              ))}
-            </ul>
+    <section className="py-16">
+      <div className="container mx-auto px-4">
+
+        {/* Sección principal: Por qué trabajar conmigo */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-main">¿Por qué trabajar conmigo?</h2>
+          <p className="text-white/60 max-w-2xl mx-auto mt-2">
+            Esto es lo que me diferencia y cómo puedo aportar valor.
+          </p>
+        </div>
+
+        <div className="space-y-6 overflow-hidden mb-16">
+          <CarouselRow items={reasons} reverse={false} />
+          <CarouselRow items={reasons} reverse={true} />
+        </div>
+
+        {/* Sección secundaria: Contacto rápido */}
+        <div className="bg-gray-800 p-8 rounded-xl">
+          <h3 className="text-2xl font-bold text-main mb-6 text-center">Contáctame</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+            {quickContacts.map((contact, index) => (
+              <a
+                key={index}
+                href={contact.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center justify-center gap-2 p-4 rounded-lg text-white 
+                bg-[#18191c] 
+                hover:scale-105 
+                hover:bg-cyan-400 hover:text-black 
+                hover:shadow-[0_0_20px_4px_rgba(34,211,238,0.8)]  
+                shadow-lg 
+                transition-all duration-300">
+                <div className="text-2xl">{contact.icon}</div>
+                <span className="text-sm font-medium">{contact.label}</span>
+              </a>
+            ))}
           </div>
         </div>
       </div>
-    </motion.section>
-  )
-}
+    </section>
+  );
+};
 
-export default Contact
+export default Contact;
