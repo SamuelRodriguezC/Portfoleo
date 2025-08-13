@@ -51,7 +51,10 @@ const CarouselRow = ({ items, reverse }) => {
 
 const Contact = () => {
   return (
-    <section className="py-16">
+    <motion.section      
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { delay: 0.4, duration: 0.4, ease: "easeIn" } }} 
+      className="py-16">
       <div className="container mx-auto px-4">
 
         {/* Sección principal: Por qué trabajar conmigo */}
@@ -91,7 +94,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
